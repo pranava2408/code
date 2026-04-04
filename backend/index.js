@@ -10,8 +10,11 @@ app.use(express.json());
 
 
 const problemRoutes = require('./routes/problemRoutes');
+const runRoutes = require('./routes/runRoutes')
 
 app.use('/api/problems', problemRoutes);
+
+app.use('/api/run', runRoutes);
 
 mongoose.connect(process.env.MONGO_URI).then(
     () => {
